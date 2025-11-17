@@ -1,10 +1,10 @@
 The course registration tool is meant to serve as a way for university adminsitrators, faculty/professors and students to be able to perform their perspective rolls when the time comes to register for courses for the coming academic term. 
 
-INSTRUCTIONS TO RUN ON LOCAL
+INSTRUCTIONS TO RUN ON LOCAL:
 * The file named database_setup_instructions_mysql contains the SQL dump commands necessary to create the database used for this project.
 * The file named mysql_credentials.py holds the values for host, port, username and password that are used to access the mySQL database from the script. The first three variables are already assigned values, but you must type your own mySQL password between the single quotes to successfully make changes to the database.
 
-GUI DEMONSTRATION
+GUI DEMONSTRATION:
 Since this Python-built project has a GUI, I'd rather show than tell, so please, scroll along with me to see the actions and accesses supported for each user type. 
 1. Registration Page: logically, the first step all users must do is register for a profile, creating login credentials associated with all the required fields and then agreeing to the terms and conditions. I'll register an adminsitrator, Jon Snow, to demonstrate.
 <img width="690" height="724" alt="registration_page" src="https://github.com/user-attachments/assets/ff286908-e28d-4878-a4c9-7576e32b6413" />
