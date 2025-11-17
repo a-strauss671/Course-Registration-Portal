@@ -1,0 +1,117 @@
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `course_management_system` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `course_management_system`;
+
+--
+-- Table structure for table `course_catalog`
+--
+
+DROP TABLE IF EXISTS `course_catalog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `course_catalog` (
+  `name` varchar(50) DEFAULT NULL,
+  `days` varchar(10) DEFAULT NULL,
+  `start` varchar(10) DEFAULT NULL,
+  `end` varchar(10) DEFAULT NULL,
+  `description` varchar(250) DEFAULT NULL,
+  `professor` varchar(25) DEFAULT NULL,
+  `code` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `course_catalog`
+--
+
+LOCK TABLES `course_catalog` WRITE;
+/*!40000 ALTER TABLE `course_catalog` DISABLE KEYS */;
+INSERT INTO `course_catalog` VALUES ('Intro to Computer Organization','TTh','9:50 a.m.','11:15 a.m.','Implementation of logic as hardware and programming in MIPS assembly language','Dr. Funke','CS0447'),('Introduction to Systems Software','MWF','11:15 a.m.','12:35 p.m.','The basics of the C programming language as well as topics such as device drivers, kernel mode, memory allocation','Dr. Ashton','CS0449'),('Linear Algebra','MWF','8:15 a.m.','9:50 a.m.','Working with matrices, linear transformations, determinants, eigenvalues, eigenvectors','Dr. Funke','MATH1120'),('Intro to Economics','MWF','11:15 a.m.','12:35 p.m.','Students learn the basics of supply and demand and systems of currency','Dr. Funke','ECON100'),('Organic Chemistry','TTh','2:50 p.m.','4:00 p.m.','The stuff of your nightmares','Dr. White','CHEM200'),('Introduction to Programming in Java','TTh','9:50 a.m.','11:15 a.m.','The basics of object-oriented programming in Java, with focus on inheritance, polymorphism, and interfaces.','Dr. White','CS007');
+/*!40000 ALTER TABLE `course_catalog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `logins`
+--
+
+DROP TABLE IF EXISTS `logins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `logins` (
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(30) DEFAULT NULL,
+  `username` varchar(15) DEFAULT NULL,
+  `password` varchar(16) DEFAULT NULL,
+  `department` varchar(25) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `phone_number` varchar(12) DEFAULT NULL,
+  `birthday` varchar(10) DEFAULT NULL,
+  `user_type` varchar(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `logins`
+--
+
+LOCK TABLES `logins` WRITE;
+/*!40000 ALTER TABLE `logins` DISABLE KEYS */;
+INSERT INTO `logins` VALUES ('Madeline','Ashton','mashton','Password','Theater','mashton@uni.edu','412-000-0000','11/03/2025','FAC'),('Tobias','Funke','tfunke','Password','Theater','tfunke@uni.edu','412-111-1111','11/03/2025','FAC'),('Carrie','Bradshaw','Dcbradshaw','Password','English','cbradhsaw@uni.edu','412-222-2222','11/08/2025','STU'),('Jessica','Day','Djday','Password','English','jday@uni.edu','412-333-3333','11/10/2025','STU'),('Charles','Kelly','STUckelly','Password','N/A','ckelly@uni.edu','412-444-4444','11/10/2025','STU'),('Tyrion','Lanister','STUtlanister','PASSWORD','History','tlanister@uni.edu','412-555-5555','11/10/2025','STU'),('George','Costanza','ADMgcostanza','Pasword','N/A','gcostanza@uni.edu','412-666-6666','11/10/2025','ADM'),('Walter','White','FACwwhite','Password','Chemistry','wwhite@uni.edu','412-777-7777','11/10/2025','FAC'),('Bojack','Horseman','STUbhorseman','Password','Theater','bhorseman@uni.edu','412-666-6666','11/11/2025','STU'),('Kendall','Roy','FACkroy','Password','Economics','kroy@uni.edu','412-777-7777','11/11/2025','FAC'),('Jon','Snow','ADMjsnow','Password','N/A','jsnow@uni.edu','412-000-0000','11/12/2025','ADM');
+/*!40000 ALTER TABLE `logins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `student_added_courses`
+--
+
+DROP TABLE IF EXISTS `student_added_courses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `student_added_courses` (
+  `username` varchar(25) DEFAULT NULL,
+  `added_course_code` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_added_courses`
+--
+
+LOCK TABLES `student_added_courses` WRITE;
+/*!40000 ALTER TABLE `student_added_courses` DISABLE KEYS */;
+INSERT INTO `student_added_courses` VALUES ('Dcbradshaw','CS0449'),('Dcbradshaw','MATH1120'),('Dcbradshaw',''),('Dcbradshaw',''),('Dcbradshaw',''),('Dcbradshaw',''),('STUckelly','CS0449'),('STUckelly','CS0447'),('STUckelly','CS0447'),('STUckelly','CS0449'),('STUtlanister','MATH1120'),('STUtlanister','CS0447'),('STUtlanister','CS0449'),('STUtlanister','ECON100'),('STUtlanister','CHEM200'),('STUtlanister','CHEM200'),('STUbhorseman','CHEM200'),('STUbhorseman','MATH1120'),('STUtlanister','MATH1120'),('STUtlanister','CS0447'),('STUtlanister','CS0449'),('STUtlanister','CHEM200');
+/*!40000 ALTER TABLE `student_added_courses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `student_dropped_courses`
+--
+
+DROP TABLE IF EXISTS `student_dropped_courses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `student_dropped_courses` (
+  `username` varchar(25) DEFAULT NULL,
+  `dropped_course_code` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_dropped_courses`
+--
+
+LOCK TABLES `student_dropped_courses` WRITE;
+/*!40000 ALTER TABLE `student_dropped_courses` DISABLE KEYS */;
+INSERT INTO `student_dropped_courses` VALUES ('Dcbradshaw','CS0449'),('STUckelly','CS0447'),('STUtlanister','MATH1120'),('STUtlanister','CHEM200'),('STUbhorseman','MATH1120'),('STUtlanister','CHEM200'),('STUtlanister','CS0447'),('STUtlanister','CS0449'),('STUtlanister','ECON100'),('STUtlanister','MATH1120'),('STUtlanister','CHEM200');
+/*!40000 ALTER TABLE `student_dropped_courses` ENABLE KEYS */;
+UNLOCK TABLES;
+SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
